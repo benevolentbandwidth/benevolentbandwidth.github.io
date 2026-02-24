@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Join | Benevolent Bandwidth Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --teal: #4A9B9B;
+            --accent: #164c4d;
+            --cream: #FAF7F2;
+            --dark-cream: #F5EFE6;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--cream);
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav .logo-section img {
+            height: 60px;
+            width: auto;
+        }
+
+        nav .logo-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--primary);
+            opacity: 0.8;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--teal) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .wide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .benefits-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .note {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+            border: none;
+            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--teal);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #164c4d;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .section-card {
+                padding: 30px 20px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            nav .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="logo.png" alt="Benevolent Bandwidth Foundation Logo">
+                <span class="logo-text">The Benevolent Bandwidth Foundation</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="index.html#get-involved">Get Involved</a></li>
+                <li><a href="backlog.html">Backlog</a></li>
+                <li><a href="whyjoin.html">Why Join</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>Why Join</h1>
+        <p class="subtitle">Join The Benevolent Bandwidth Foundation and make a meaningful impact while building your career</p>
+    </div>
+
+    <div class="container">
+
+        <div class="section-card">
+            <h2>For Contributors</h2>
+            <h3>Build Your Portfolio with Purpose</h3>
+            <p class="intro-text">Ship production code alongside leaders from Meta, Google, Tesla, Amazon, Fidelity, etc. and solve real problems that matter.</p>
+
+            <h3>What You Get:</h3>
+            <ul class="benefits-list">
+                <li><strong>Real-World Experience:</strong> Work on live tools serving actual users - from design, build, deploy to go to market</li>
+                <li><strong>"Open Source Fellow" Title:</strong> Add a professional credential to your LinkedIn and resume that signals serious contribution</li>
+                <li><strong>Expert Code Reviews:</strong> Get feedback from senior engineers at top tech companies</li>
+            </ul>
+
+            <h3>Top Contributors:</h3>
+            <ul class="benefits-list">
+                <li><strong>Recommendations:</strong> Endorsements from industry veterans highlighting your specific contributions</li>
+                <li><strong>Career Mentorship:</strong> Access to coaching with Foundation and Technical Advisors</li>
+                <li><strong>Author Credit:</strong> Publish blog posts and technical write-ups under your name</li>
+                <li><strong>Network Connections:</strong> Advisors may be able to facilitate introductions at companies where they have relationships when there is a good fit</li>
+                <li><strong>References:</strong> Strong references from senior practitioners for job applications</li>
+            </ul>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9MrZ3ST37EaCv2QdJA5GkUFW3gmDklqAjlUyRXfrt2l0ykA/viewform" target="_blank" class="btn-primary">Get Involved</a>
+        </div>
+
+        <div class="section-card">
+            <h2>For Technical Advisors</h2>
+            <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">(Engineers, Scientists, Product Managers, or Designers, UI/UX)</p>
+            <h3>Lead. Mentor. Network.</h3>
+            <p class="intro-text">You're already great at building. Come practice being a leader/GM with a focus on end to end delivery. Architect solutions, mentor teams, and connect with VPs and Directors from major tech firms and top universities.</p>
+
+            <h3>What You Get:</h3>
+            <ul class="benefits-list">
+                <li><strong>Leadership Credentials:</strong> Use the title "Technical Advisor" on LinkedIn and your resume to demonstrate leadership experience</li>
+                <li><strong>Executive Network Access:</strong> Roundtables with Foundation Advisors (VPs, Directors, Professors) for off-the-record industry chats and career discussions</li>
+                <li><strong>Speaking Opportunities:</strong> We'll connect you with universities, conferences, and meetups looking for technical speakers</li>
+                <li><strong>Executive Coaching:</strong> 1-on-1 career strategy sessions with Foundation Advisors (e.g., "transitioning from IC to management")</li>
+                <li><strong>Talent Pipeline Access:</strong> First look at b²'s vetted contributors when you're hiring for your day job</li>
+            </ul>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9MrZ3ST37EaCv2QdJA5GkUFW3gmDklqAjlUyRXfrt2l0ykA/viewform" target="_blank" class="btn-primary">Get Involved</a>
+        </div>
+
+        <div class="note">
+            <strong>Note:</strong> All mentorship, recommendations, and introductions are provided at the discretion of individual advisors based on quality of contribution and availability. b² facilitates connections but does not guarantee employment outcomes.
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 The Benevolent Bandwidth Foundation. All rights reserved.</p>
+        <p style="margin: 15px 0;">
+            <a href="mailto:benevolent@benevolentbandwidth.org">Contact</a> • 
+            <a href="https://github.com/benevolentbandwidth/" target="_blank">GitHub</a> • 
+            <a href="https://benevolentbandwidth.slack.com" target="_blank">Slack</a> • 
+            <a href="https://forms.gle/ptjrug12hkpkoK1m9" target="_blank">Collaboration Interest</a> • 
+            <a href="https://forms.gle/5kit2Yo2bEdXMGXC8" target="_blank">Submit Idea</a> • 
+            <a href="backlog.html">Project Backlog</a> • 
+            <a href="whyjoin.html">Why Join</a>
+        </p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">Built with ❤️ for humanity</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

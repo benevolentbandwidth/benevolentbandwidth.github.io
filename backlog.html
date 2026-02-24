@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Backlog | Benevolent Bandwidth Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --teal: #4A9B9B;
+            --accent: #164c4d;
+            --cream: #FAF7F2;
+            --dark-cream: #F5EFE6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--cream);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav .logo-section img {
+            height: 60px;
+            width: auto;
+        }
+
+        nav .logo-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--primary);
+            opacity: 0.8;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            nav .nav-links.active {
+                display: flex;
+            }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--teal) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .intro h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            color: var(--teal);
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.15rem;
+            color: #666;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(44, 62, 80, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--teal) 0%, var(--accent) 100%);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(74, 155, 155, 0.2);
+        }
+
+        .project-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .project-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-right: 60px;
+            font-weight: 700;
+        }
+
+        .project-section {
+            margin-bottom: 25px;
+        }
+
+        .project-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--teal);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: var(--teal);
+        }
+
+        .section-content {
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                padding: 30px;
+            }
+
+            .intro h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #164c4d;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="logo.PNG" alt="Benevolent Bandwidth Foundation" onerror="this.style.display='none'">
+                <span class="logo-text">The Benevolent Bandwidth Foundation</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="index.html#get-involved">Get Involved</a></li>
+                <li><a href="backlog.html">Backlog</a></li>
+                <li><a href="whyjoin.html">Why Join</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Project Backlog</h1>
+        <p class="subtitle">Innovative ideas with public benefit awaiting development to create positive impact through open-source technology</p>
+        <a href="https://forms.gle/5kit2Yo2bEdXMGXC8" target="_blank" class="btn-primary">Submit an Idea</a>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+        </div>
+
+        <div class="projects-grid">
+            
+            <!-- ACCESS TO INFORMATION DOMAIN -->
+            
+            <!-- Project 1: The Voice of Contracts -->
+            <div class="project-card">
+                <div class="project-number">1</div>
+                <h3>The Voice of Contracts</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Access to Information</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Low-literacy borrowers in Southeast Asia and Africa who sign contracts in colonial or legal languages they cannot read</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Prevents exploitation of vulnerable borrowers who are locked into predatory loans because they can't understand contract terms. Directly addresses information asymmetry that enables financial abuse.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">OCR + translation + LLM analysis + text-to-speech pipeline. Scans contract text, translates to local language (Hindi, Swahili, Bengali), uses LLM to flag predatory clauses (high interest rates, hidden fees, unfair penalties), then reads aloud the red flags in the user's dialect.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Contracts scanned per month</li>
+                            <li>Predatory clauses flagged</li>
+                            <li>User-reported loan rejections (avoided bad deals)</li>
+                            <li>Languages supported</li>
+                            <li>Debt burden avoided (estimated)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: The Harvest Guardian -->
+            <div class="project-card">
+                <div class="project-number">2</div>
+                <h3>The Harvest Guardian</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Access to Information</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Smallholder farmers in India and Africa without reliable internet access but with basic mobile phones</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Information asymmetry allows middlemen to exploit farmers by underpaying for crops. Real-time price transparency empowers farmers to negotiate fair prices and avoid predatory intermediaries.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">SMS-based price lookup system. Farmer sends text message with crop type and location; backend pulls current wholesale market prices and sends reply via SMS. Works offline-first with periodic data syncing for price updates.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>SMS queries per month</li>
+                            <li>Number of farmers reached</li>
+                            <li>Price improvement (farmer-reported difference between quoted price and actual market rate)</li>
+                            <li>Geographic coverage (regions/crops supported)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FINANCIAL PROTECTION DOMAIN -->
+            
+            <!-- Project 3: The Real Cost of Lending Lens -->
+            <div class="project-card">
+                <div class="project-number">3</div>
+                <h3>The Real Cost of Lending Lens</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Financial Protection</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Low-income borrowers considering payday loans, title loans, or rent-to-own agreements</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Predatory lenders exploit mathematical illiteracy by emphasizing affordable monthly payments while hiding crushing total costs. Showing "you'll pay $3,000 for a $1,000 loan" prevents people from signing exploitative agreements.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">OCR + financial calculator. User photographs loan document; OCR extracts APR, fees, and payment terms; calculator shows total dollars paid over loan lifetime (not just monthly payment). Compares to alternatives (credit union loans, payment plans).</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Loan documents scanned per month</li>
+                            <li>Average total cost revealed (vs. principal borrowed)</li>
+                            <li>User-reported loan rejections (avoided predatory deals)</li>
+                            <li>Estimated debt burden avoided</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: The Gig-Worker's Truth -->
+            <div class="project-card">
+                <div class="project-number">4</div>
+                <h3>The Gig-Worker's Truth</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Financial Protection</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Gig economy workers (Uber, DoorDash, Instacart drivers) who don't realize their true hourly wage after expenses</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Gig platforms obscure true earnings by highlighting gross revenue while hiding costs. Many drivers earn below minimum wage without realizing it. Transparency empowers workers to make informed decisions about their labor.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">Screenshot OCR + expense calculator. Users upload weekly earnings screenshots; OCR extracts revenue data; calculator subtracts gas, vehicle depreciation, taxes, insurance; displays real hourly wage. Shows comparison to local minimum wage.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Screenshots analyzed per week</li>
+                            <li>Average true wage calculated (vs. platform-reported earnings)</li>
+                            <li>Users who quit or reduced hours after seeing real wage</li>
+                            <li>Platform coverage (Uber, DoorDash, etc.)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ENVIRONMENTAL IMPACT DOMAIN -->
+            
+            <!-- Project 5: The Scrap Hacker -->
+            <div class="project-card">
+                <div class="project-number">5</div>
+                <h3>The Scrap Hacker</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Environmental Impact</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Rural residents in developing countries (India, Turkey, etc.) with access to waste materials but limited technical knowledge or tools</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Transforms waste into resources for communities that can't afford new materials. Empowers local innovation and reduces environmental impact in areas without formal waste management systems.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">Computer vision + retrieval system that identifies trash materials through camera input and retrieves engineering-grade blueprints for upcycling. Uses image recognition to classify materials (bottles, tires, metal scraps) and matches them to a curated database of DIY construction/upcycling instructions.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Blueprints retrieved per month</li>
+                            <li>Materials successfully repurposed (user-reported)</li>
+                            <li>Geographic spread (number of villages/regions using tool)</li>
+                            <li>Cost savings for users (estimated value of items built vs. buying new)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: The Green Grant Navigator -->
+            <div class="project-card">
+                <div class="project-number">6</div>
+                <h3>The Green Grant Navigator</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Environmental Impact</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Small nonprofits and community groups working on climate resilience projects who can't afford grant writers</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Climate funding disproportionately goes to large organizations with grant-writing capacity. Small community groups doing frontline climate work can't access capital. Leveling the playing field gets resources to those closest to the problems.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">RAG system trained on federal climate funding databases (EPA, FEMA, DOE). User inputs project description; system searches for matching grants, explains eligibility requirements, and drafts narrative sections of grant application using templates and best practices.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Grant searches per month</li>
+                            <li>Grant applications submitted (user-reported)</li>
+                            <li>Funding secured (user-reported)</li>
+                            <li>Geographic/demographic diversity of users</li>
+                            <li>Total climate funding redirected to small orgs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACCESS TO JUSTICE DOMAIN -->
+            
+            <!-- Project 7: The Scope Creep Shield -->
+            <div class="project-card">
+                <div class="project-number">7</div>
+                <h3>The Scope Creep Shield</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Access to Justice</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Freelancers and gig workers (designers, writers, developers) who face scope creep and payment disputes</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Most freelancers work without proper contracts or sign client-biased agreements because they lack legal knowledge. This leads to unpaid work, scope creep, and payment disputes. Levels the playing field.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">LLM-powered contract analysis that reviews freelance agreements, flags problematic clauses (vague scope, no kill fee, missing IP rights, unlimited revisions), and suggests protective language. Acts as "bad cop" advocate for freelancer interests.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Contracts reviewed per month</li>
+                            <li>Red flags identified per contract</li>
+                            <li>Protective clauses added (user-reported)</li>
+                            <li>Payment disputes avoided (survey data)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: The Eviction Shield -->
+            <div class="project-card">
+                <div class="project-number">8</div>
+                <h3>The Eviction Shield</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Access to Justice</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Low-income tenants facing eviction or unsafe housing conditions</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Tenants lose cases not because they lack defenses but because they don't know their rights or how to assert them. Landlords send legally dubious threats knowing tenants won't fight back. Empowering tenants with legal knowledge prevents wrongful evictions.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">Location-aware RAG chatbot pulling from local tenant protection laws. User enters ZIP code and issue; system explains specific rights under local law, provides step-by-step guidance, and generates legally-sound demand letters to landlords. MVP covers 5 cities with strong tenant protections.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Chatbot queries per month</li>
+                            <li>Demand letters generated</li>
+                            <li>User-reported evictions prevented</li>
+                            <li>Habitability improvements achieved</li>
+                            <li>Cities/jurisdictions covered</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMUNITY RESILIENCE DOMAIN -->
+            
+            <!-- Project 9: The Disaster Prep Agent -->
+            <div class="project-card">
+                <div class="project-number">9</div>
+                <h3>The Disaster Prep Agent</h3>
+                
+                <div class="project-section">
+                    <div class="section-label">Problem Domain</div>
+                    <div class="section-content">Community Resilience</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Target Users</div>
+                    <div class="section-content">Households in disaster-prone areas (hurricanes, earthquakes, wildfires) who need actionable emergency plans</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Why It Matters</div>
+                    <div class="section-content">Information paralysis kills people during disasters. Dense government documents aren't actionable in emergencies. A simple, hyper-local plan increases survival rates and reduces panic.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Technical Solution</div>
+                    <div class="section-content">RAG (Retrieval-Augmented Generation) system pulling from FEMA guides and local emergency management data. User enters ZIP code and disaster type; system generates customized, printable one-page emergency plan with evacuation routes, supply checklists, and emergency contacts. Offline-cacheable.</div>
+                </div>
+                
+                <div class="project-section">
+                    <div class="section-label">Metrics That Matter</div>
+                    <div class="section-content">
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Plans generated per month</li>
+                            <li>ZIP codes covered</li>
+                            <li>Downloads during declared emergencies</li>
+                            <li>User-reported preparedness improvements (survey data)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 The Benevolent Bandwidth Foundation. All rights reserved.</p>
+        <p style="margin: 15px 0;">
+            <a href="mailto:benevolent@benevolentbandwidth.org">Contact</a> • 
+            <a href="https://github.com/benevolentbandwidth/" target="_blank">GitHub</a> • 
+            <a href="https://benevolentbandwidth.slack.com" target="_blank">Slack</a>
+        </p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">Built with ❤️ for humanity</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
+
