@@ -476,12 +476,46 @@
             display: none;
         }
 
-        /* Organizational Structure */
+        /* Organizational Structure — four roles in one row on desktop */
         .org-structure {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
             margin: 40px 0;
+            align-items: stretch;
+        }
+
+        .org-structure .org-card {
+            min-width: 0;
+            padding: 28px 14px;
+        }
+
+        .org-structure .org-card h4 {
+            font-size: 1.1rem;
+        }
+
+        .org-structure .org-card p {
+            font-size: 0.92rem;
+            line-height: 1.45;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .org-structure {
+                grid-template-columns: 1fr;
+            }
+
+            .org-structure .org-card {
+                padding: 40px 30px;
+            }
+
+            .org-structure .org-card h4 {
+                font-size: 1.2rem;
+            }
+
+            .org-structure .org-card p {
+                font-size: inherit;
+            }
         }
 
         .org-card {
@@ -990,7 +1024,7 @@
     <!-- The previous container has no margin-bottom, so we add a spacer -->
     <div style="margin-top: 60px;"></div>
 
-    <div class="container" style="background-color: #fff; border-radius: 12px; padding: 60px 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    <div class="wide-container" style="background-color: #fff; border-radius: 12px; padding: 60px 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
         <h2 class="section-title">Our Organizational Formation</h2>
         <div class="org-structure">
             <div class="org-card">
@@ -1007,6 +1041,11 @@
                 <div class="org-badge">3</div>
                 <h4>Benevolent Contributors</h4>
                 <p>Execution leaders</p>
+            </div>
+            <div class="org-card">
+                <div class="org-badge">4</div>
+                <h4>Executive Committee</h4>
+                <p>Administrators of the foundation</p>
             </div>
         </div>
     </div>
@@ -1057,6 +1096,16 @@
                 <li><strong>Mentorship:</strong> Guide and grow the skills of contributing developers</li>
                 <li><strong>Innovation:</strong> Scout for new project ideas that align with our mission</li>
             </ul>
+        </div>
+    </div>
+
+    <div style="margin-top: 60px;"></div>
+
+    <!-- ROLE OF EXECUTIVE COMMITTEE MEMBERS -->
+    <div class="container" style="background-color: #fff; border-radius: 12px; padding: 60px 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <h2 class="section-title">Role of Executive Committee Members</h2>
+        <div style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <p style="color: #555; line-height: 1.8; font-size: 1.05rem; margin: 0;">The Executive Committee is responsible for the administrative and operational health of The Benevolent Bandwidth Foundation. Members lead key functions including nonprofit and NGO partnerships, project monitoring, PR and communications, conference relationships, recruiting and university partnerships, contributor engagement, legal and compliance, and technical infrastructure. Together, they ensure that The Benevolent Bandwidth Foundation runs effectively, grows sustainably, and stays true to its mission. They are the infrastructure behind the impact.</p>
         </div>
     </div>
 
@@ -1198,6 +1247,61 @@
                 <h4>Pranay Tiwari</h4>
                 <p class="role">Vice President, Data Science, Fidelity Investments</p>
                 <p>Previously: Sr. Research Manager, IMRB International</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 60px;"></div>
+
+    <!-- EXECUTIVE COMMITTEE MEMBERS -->
+    <div class="wide-container" style="background-color: #fff; border-radius: 12px; padding: 60px 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <h2 class="section-title">Benevolent Executive Committee Members</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="advisors/theresa_bedeau.jpeg" alt="Theresa Bedeau" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="avatar-placeholder" style="display: none;">TB</div>
+                <h4>Theresa Bedeau</h4>
+                <p style="color: #555; font-weight: 600; margin-bottom: 8px;">NGO and Nonprofit partnerships</p>
+                <p class="role">Founder, Solaria Strategy. Member of the Board of Directors, Association of Enterprise Opportunity</p>
+                <p>Previously: Chief Strategy Officer, Justice Climate Fund. Director of Community Impact, Capital One.</p>
+            </div>
+            <div class="team-member">
+                <img src="advisors/shovon_sengupta.jpeg" alt="Shovon Sengupta" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="avatar-placeholder" style="display: none;">SS</div>
+                <h4>Shovon Sengupta</h4>
+                <p style="color: #555; font-weight: 600; margin-bottom: 8px;">NGO and Nonprofit partnerships</p>
+                <p class="role">Director of AI, Fidelity Investments</p>
+                <p>Previously: Manager of Advanced Analytics, Bank of America</p>
+            </div>
+            <div class="team-member">
+                <img src="advisors/andria_thomas.jpeg" alt="Andria Thomas" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="avatar-placeholder" style="display: none;">AT</div>
+                <h4>Andria Thomas</h4>
+                <p style="color: #555; font-weight: 600; margin-bottom: 8px;">GTM and product continuity</p>
+                <p class="role">Chief Product Officer, FinLocker</p>
+                <p>Previously: Lead of Credit Wiser, Capital One. Associate Partner, Dalberg. Project leader, BCG Consulting</p>
+            </div>
+            <div class="team-member">
+                <img src="advisors/dana_vicioso.jpeg" alt="Dana Vicioso" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="avatar-placeholder" style="display: none;">DV</div>
+                <h4>Dana Vicioso</h4>
+                <p style="color: #555; font-weight: 600; margin-bottom: 8px;">Conference relationships</p>
+                <p class="role">Administration, Capital One</p>
+                <p>Previously: Administration, Bank of America</p>
+            </div>
+            <div class="team-member">
+                <img src="advisors/kasey_corra.jpeg" alt="Kasey Corra" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="avatar-placeholder" style="display: none;">KC</div>
+                <h4>Kasey Corra</h4>
+                <p style="color: #555; font-weight: 600; margin-bottom: 8px;">AI and Agent Ethics</p>
+                <p class="role">Technical Fellow, AI Safety Initiative, Georgia Tech</p>
+            </div>
+            <div class="team-member">
+                <img src="advisors/helen_santoro.jpeg" alt="Helen Santoro" class="avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="avatar-placeholder" style="display: none;">HS</div>
+                <h4>Helen Santoro</h4>
+                <p style="color: #555; font-weight: 600; margin-bottom: 8px;">PR, Communications, and Social Media</p>
+                <p class="role">Chief of Staff, Capital One</p>
             </div>
         </div>
     </div>
