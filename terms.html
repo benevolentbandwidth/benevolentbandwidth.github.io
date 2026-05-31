@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Benevolent Bandwidth Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2C3E50;
+      --teal: #4A9B9B;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, serif;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      line-height: 1.8;
+      background-color: #FAF7F2;
+    }
+
+    /* Navigation Bar — identical to index.html */
+    nav {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    nav .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav .logo-section img {
+      height: 60px;
+      width: auto;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav .nav-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-toggle { display: block; }
+      nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      nav .nav-links.active { display: flex; }
+    }
+
+    /* Page content */
+    .content {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+
+    h1 { font-family: 'Crimson Pro', serif; font-size: 2rem; margin-bottom: 0.25em; color: var(--primary); }
+    h2 { font-family: 'Crimson Pro', serif; font-size: 1.2rem; margin-top: 2em; margin-bottom: 0.5em; color: var(--primary); }
+    p { margin: 0.75em 0; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 2em; }
+    a { color: #1a5276; }
+    footer { margin-top: 4em; padding-top: 1em; border-top: 1px solid #ddd; color: #666; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo-section">
+        <a href="index.html"><img src="logo.PNG" alt="Benevolent Bandwidth Foundation" onerror="this.style.display='none'"></a>
+      </div>
+      <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="index.html#get-involved">Get Involved</a></li>
+        <li><a href="backlog.html">Backlog</a></li>
+        <li><a href="whyjoin.html">Why Join</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h1>Terms of Service</h1>
+    <p class="meta">Benevolent Bandwidth Foundation, Inc. &nbsp;·&nbsp; Effective date: June 1, 2026</p>
+
+    <p>These Terms of Service ("Terms") govern your access to and use of the services, tools, and platforms operated by the Benevolent Bandwidth Foundation, Inc. ("we," "our," or "the Foundation"), including our website, AI-powered tools, and WhatsApp-based services. By using our services, you agree to these Terms.</p>
+
+    <h2>1. About the Foundation</h2>
+    <p>The Benevolent Bandwidth Foundation is a Massachusetts nonprofit corporation building open-source AI tools for public benefit. Our services are provided free of charge and are intended for educational, research, and public interest purposes.</p>
+
+    <h2>2. Acceptable Use</h2>
+    <p>You agree to use our services only for lawful purposes and in a manner consistent with the Foundation's mission. You may not:</p>
+    <p>— Use our services to harass, harm, or discriminate against others<br>
+    — Attempt to reverse engineer, exploit, or interfere with our systems<br>
+    — Use our services to generate, distribute, or promote illegal content<br>
+    — Impersonate the Foundation or its representatives<br>
+    — Use our services in ways that violate applicable law</p>
+
+    <h2>3. Intellectual Property</h2>
+    <p>Our open-source projects are released under their respective licenses, available on our GitHub organization at <a href="https://github.com/benevolentbandwidth">github.com/benevolentbandwidth</a>. The Foundation name, logo, and branding are the property of the Benevolent Bandwidth Foundation and may not be used without permission.</p>
+
+    <h2>4. AI-Powered Tools and WhatsApp Services</h2>
+    <p>Our AI tools are experimental and provided on an as-is basis. They are designed to assist, not to replace, professional judgment. You should not rely on outputs from our AI tools as a substitute for professional medical, legal, financial, or other advice.</p>
+    <p>When interacting with our services through WhatsApp, you consent to your messages being processed by our systems to provide the service. Message processing occurs on infrastructure governed by enterprise data protection agreements.</p>
+
+    <h2>5. Disclaimer of Warranties</h2>
+    <p>Our services are provided "as is" without warranties of any kind, express or implied. We do not warrant that our services will be uninterrupted, error-free, or free of harmful components. The Foundation is a nonprofit operating with limited resources and cannot guarantee continuous availability.</p>
+
+    <h2>6. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, the Foundation shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services. Our total liability shall not exceed the amount you paid us in the twelve months preceding the claim, if any.</p>
+
+    <h2>7. Privacy</h2>
+    <p>Your use of our services is also governed by our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+
+    <h2>8. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. We will post updated Terms on this page with a revised effective date. Continued use of our services after changes are posted constitutes your acceptance of the updated Terms.</p>
+
+    <h2>9. Governing Law</h2>
+    <p>These Terms are governed by the laws of the Commonwealth of Massachusetts, without regard to its conflict of law provisions.</p>
+
+    <h2>10. Contact Us</h2>
+    <p>If you have questions about these Terms, please contact us at:</p>
+    <p>Benevolent Bandwidth Foundation, Inc.<br>
+    11 Vineyard Rd, Newton, MA 02459<br>
+    <a href="mailto:benevolent@benevolentbandwidth.org">benevolent@benevolentbandwidth.org</a><br>
+    <a href="https://www.benevolentbandwidth.org">www.benevolentbandwidth.org</a></p>
+
+    <footer>
+      &copy; 2026 Benevolent Bandwidth Foundation, Inc. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
