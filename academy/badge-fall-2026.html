@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        PERMANENT URL: https://benevolentbandwidth.org/academy/badge-fall-2026
+        This page is the criteria URL inside every issued "GenAI Academy for Nonprofits - Fall 2026"
+        Open Badge (Certifier, Open Badges 3.0). Do not rename, move, or redirect this file.
+        Keep it as a .html file (not a folder with index.html): GitHub Pages serves this file at the
+        extensionless path with a 200, while a folder would trigger a 301 redirect to a trailing slash.
+    -->
+    <title>GenAI Academy Fall 2026 Badge | Benevolent Bandwidth Foundation</title>
+    <meta name="description" content="Criteria and verification for the GenAI Academy for Nonprofits Fall 2026 Open Badge, issued by the Benevolent Bandwidth Foundation through Certifier.">
+    <link rel="canonical" href="https://benevolentbandwidth.org/academy/badge-fall-2026" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://benevolentbandwidth.org/academy/badge-fall-2026">
+    <meta property="og:title" content="GenAI Academy for Nonprofits — Fall 2026 Badge">
+    <meta property="og:description" content="What this Open Badge was awarded for, what earners learned and built, and how to verify a badge issued by the Benevolent Bandwidth Foundation.">
+    <meta property="og:image" content="https://benevolentbandwidth.org/academy/genai-academy-badge-fall-2026.png">
+    <meta property="og:image:alt" content="GenAI Academy for Nonprofits Fall 2026 completion badge, issued by the Benevolent Bandwidth Foundation.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="GenAI Academy for Nonprofits — Fall 2026 Badge">
+    <meta name="twitter:description" content="What this Open Badge was awarded for, what earners learned and built, and how to verify a badge issued by the Benevolent Bandwidth Foundation.">
+    <meta name="twitter:image" content="https://benevolentbandwidth.org/academy/genai-academy-badge-fall-2026.png">
+    <meta name="twitter:image:alt" content="GenAI Academy for Nonprofits Fall 2026 completion badge, issued by the Benevolent Bandwidth Foundation.">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Tokens, typography, nav, hero, cards, and footer follow index.html */
+        :root {
+            --primary: #2C3E50;
+            --teal: #4A9B9B;
+            --accent: #164c4d;
+            --cream: #FAF7F2;
+            --dark-cream: #F5EFE6;
+            --border: #e2e8f0;
+            --text: #2C3E50;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--cream);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: #fff;
+            color: var(--primary);
+            padding: 10px 16px;
+            z-index: 1100;
+        }
+
+        .skip-link:focus {
+            left: 10px;
+            top: 10px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav .logo-section img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            nav .nav-links.active {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--teal) 100%);
+            color: white;
+            padding: 50px 20px 40px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #fff;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+            margin-bottom: 10px;
+        }
+
+        .hero-badge img {
+            display: block;
+            width: 240px;
+            height: 240px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            margin: 16px auto 12px;
+            max-width: 900px;
+            color: white;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .hero-meta li {
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Section cards */
+        main {
+            padding: 0 20px;
+        }
+
+        .card {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 48px 48px 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin: 0 0 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .card p {
+            color: #334155;
+            line-height: 1.8;
+            margin: 0 0 16px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .lead {
+            font-size: 1.05rem;
+        }
+
+        /* Earning criteria */
+        .criteria-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: criteria;
+        }
+
+        .criteria-list li {
+            counter-increment: criteria;
+            position: relative;
+            padding: 0 0 28px 64px;
+            color: #334155;
+            line-height: 1.75;
+        }
+
+        .criteria-list li:last-child {
+            padding-bottom: 0;
+        }
+
+        .criteria-list li::before {
+            content: counter(criteria);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .criteria-list h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 4px 0 6px;
+            line-height: 1.3;
+        }
+
+        .criteria-list p {
+            margin: 0;
+        }
+
+        /* Skills - matches the b² Principles list */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skills-list li {
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            background: #f9f9f9;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #334155;
+        }
+
+        .skills-list strong {
+            color: var(--primary);
+        }
+
+        /* Curriculum */
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin: 8px 0 24px;
+        }
+
+        .session-card {
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .session-label {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            margin: 0 0 6px;
+        }
+
+        .session-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 0 0 8px;
+            line-height: 1.3;
+        }
+
+        .card .session-instructor {
+            color: var(--accent);
+            font-weight: 600;
+            line-height: 1.5;
+            margin: 0 0 10px;
+        }
+
+        .card .session-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Verification steps */
+        .verify-steps {
+            margin: 0 0 20px;
+            padding-left: 1.4em;
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .verify-steps li {
+            margin-bottom: 8px;
+        }
+
+        .note {
+            background: var(--dark-cream);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+
+        /* Badge details table */
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        .details-table th,
+        .details-table td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .details-table th {
+            width: 32%;
+            color: var(--primary);
+            font-weight: 600;
+            background: #f9f9f9;
+        }
+
+        .details-table td {
+            color: #334155;
+        }
+
+        .details-table tr:last-child th,
+        .details-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #164c4d;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 36px 16px 32px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-badge img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 0 16px;
+            }
+
+            .card {
+                margin-top: 24px;
+                padding: 28px 20px;
+            }
+
+            .card h2 {
+                font-size: 1.8rem;
+            }
+
+            .criteria-list li {
+                padding-left: 52px;
+            }
+
+            .criteria-list li::before {
+                width: 36px;
+                height: 36px;
+                line-height: 36px;
+                font-size: 1rem;
+            }
+
+            .skills-list,
+            .session-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .details-table th,
+            .details-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .details-table th {
+                border-bottom: none;
+                padding-bottom: 4px;
+            }
+
+            .details-table td {
+                padding-top: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- NAVIGATION BAR -->
+    <nav aria-label="Main">
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="/"><img src="/logo.PNG" alt="Benevolent Bandwidth Foundation" onerror="this.style.display='none'"></a>
+            </div>
+            <button type="button" class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#team">Team</a></li>
+                <li><a href="https://docs.google.com/forms/d/1JCeX_p8Zzsg2FGJw3Z60OV-qwlIaP7EBGSNStcCvLdY/edit" target="_blank" rel="noopener">Collaborate</a></li>
+                <li><a href="/terms.html">Terms</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-badge">
+            <img src="/academy/genai-academy-badge-fall-2026.png" width="240" height="240" alt="GenAI Academy for Nonprofits Fall 2026 completion badge, issued by the Benevolent Bandwidth Foundation.">
+        </div>
+        <h1>GenAI Academy for Nonprofits — Fall 2026</h1>
+        <p class="subtitle">Awarded to people from nonprofit organizations who completed all four live sessions and the hands-on work of our first GenAI Academy cohort.</p>
+        <ul class="hero-meta">
+            <li>Issued by Benevolent Bandwidth Foundation</li>
+            <li>Open Badges 3.0 credential</li>
+        </ul>
+    </header>
+
+    <main id="main">
+
+        <!-- ABOUT THIS BADGE -->
+        <section class="card" aria-labelledby="about-badge">
+            <h2 id="about-badge">About this badge</h2>
+            <p class="lead">This badge shows that the earner completed the GenAI Academy for Nonprofits, a free program run by the Benevolent Bandwidth Foundation (B2). The Fall 2026 cohort was the academy's first, a pilot group.</p>
+            <p>The academy is open only to people who work with nonprofit organizations. It ran as four live, instructor-led online sessions of about two hours each, from October 24 to November 14, 2026.</p>
+            <p>Earning the badge took more than attendance. Earners completed three hands-on assignments: a prompting lab, an interactive grant tracker, and a data dashboard. All of the work used fictional or synthetic data and followed the academy's rules for responsible AI use.</p>
+        </section>
+
+        <!-- EARNING CRITERIA -->
+        <section class="card" aria-labelledby="criteria">
+            <h2 id="criteria">Earning criteria</h2>
+            <p>To earn this badge, a participant met all five of the following criteria.</p>
+            <ol class="criteria-list">
+                <li>
+                    <h3>Attended all four live sessions</h3>
+                    <p>Attended all four live, instructor-led sessions of the Benevolent Bandwidth Foundation's GenAI Academy for Nonprofits (October 24 – November 14, 2026): AI Foundations and Prompting; Building Useful Tools with AI; Data Generation and AI-Powered Analysis; and Agentic AI Orchestration with n8n.</p>
+                </li>
+                <li>
+                    <h3>Session 1: Structured prompts with a written rationale</h3>
+                    <p>Completed a hands-on prompting lab built around a fictional youth nonprofit. Submitted structured prompts defining task, context, constraints, and format, using techniques such as role assignment, few-shot examples, and fenced sources. Included a written explanation of how each prompt was built, why each technique was chosen, and where guardrails were added, such as flagging missing facts and labeling drafts for human review.</p>
+                </li>
+                <li>
+                    <h3>Session 2: Interactive grant tracker (HTML)</h3>
+                    <p>Vibe-coded a working grant tracker with Claude from 20 fictional grant records and a project brief, and submitted the HTML file. Briefed the AI on the user, job, and data; reviewed its plan before building; delivered a readable grant list with status filter, keyword search, and reset; flagged missing information as "not provided" instead of inventing it; and refined the tool through conversational iteration.</p>
+                </li>
+                <li>
+                    <h3>Session 3: Data dashboard (HTML)</h3>
+                    <p>Built a defensible dashboard from a 144-row synthetic nonprofit dataset using a seven-step prompt pipeline, and submitted the HTML file. Set explicit data, calculation, behavior, and boundary rules; had the AI audit the data for duplicates, gaps, and impossible records and flag rather than fix them; defined KPI formulas before building; then built, verified, and restyled the dashboard.</p>
+                </li>
+                <li>
+                    <h3>Responsible-use standards</h3>
+                    <p>All work used synthetic or fictional data only. No real donor, beneficiary, or staff information was entered into any AI tool, in line with the academy's core rules: use approved data only, verify before trusting, and keep a named person responsible for every output.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="card" aria-labelledby="skills">
+            <h2 id="skills">What earners can do</h2>
+            <p>Earners practiced these skills in the sessions and assignments.</p>
+            <ul class="skills-list">
+                <li><strong>Structured prompting:</strong> task, context, constraints, and format; zero-shot, few-shot, and role-based patterns</li>
+                <li><strong>Context engineering:</strong> grounding AI output in approved sources</li>
+                <li><strong>AI output verification:</strong> catching hallucinations, flagging missing or conflicting facts, labeling drafts for human review</li>
+                <li><strong>Responsible AI guardrails:</strong> protecting beneficiary data, human approval steps, named ownership, the 4 Ds decision framework</li>
+                <li><strong>Vibe coding:</strong> building and refining an interactive web tool through conversation with AI</li>
+                <li><strong>AI-assisted data analysis:</strong> auditing data, defining KPIs explicitly, building a defensible dashboard</li>
+                <li><strong>Synthetic data and data privacy:</strong> practicing safely, scrubbing PII, disabling model training on your data</li>
+                <li><strong>Agentic workflow design (n8n):</strong> how an AI agent uses tools inside a governed workflow with a human approval gate</li>
+            </ul>
+        </section>
+
+        <!-- CURRICULUM -->
+        <section class="card" aria-labelledby="curriculum">
+            <h2 id="curriculum">Curriculum</h2>
+            <p>Four live online sessions, about two hours each, held October 24 – November 14, 2026.</p>
+            <div class="session-grid">
+                <article class="session-card">
+                    <p class="session-label">Session 1</p>
+                    <h3>AI Foundations, Prompting, and Context Engineering</h3>
+                    <p class="session-instructor">Dr. Shovon Sengupta, Director of Data Science and Applied AI Research, Fidelity Investments</p>
+                    <p>How to write structured prompts and ground AI output in approved sources, practiced in a hands-on prompting lab.</p>
+                </article>
+                <article class="session-card">
+                    <p class="session-label">Session 2</p>
+                    <h3>Building Useful Tools with AI (Vibe Coding)</h3>
+                    <p class="session-instructor">Shel Horta, AI practitioner with 20 years in HR and organizational culture transformation</p>
+                    <p>How to brief an AI, review its plan, and build an interactive grant tracker through conversation.</p>
+                </article>
+                <article class="session-card">
+                    <p class="session-label">Session 3</p>
+                    <h3>Data Generation and AI-Powered Analysis</h3>
+                    <p class="session-instructor">Dr. Arvind Sharma, Assistant Professor of Applied Economics, Boston College</p>
+                    <p>How to audit a synthetic dataset, define KPIs up front, and build a dashboard you can defend.</p>
+                </article>
+                <article class="session-card">
+                    <p class="session-label">Session 4</p>
+                    <h3>Agentic AI Orchestration with n8n</h3>
+                    <p class="session-instructor">Dr. Shovon Sengupta</p>
+                    <p>A live build of an n8n agent, showing how an AI agent uses tools inside a governed workflow with a human approval gate.</p>
+                </article>
+            </div>
+            <p>The academy was founded by Nurtekin Savas, founder of the Benevolent Bandwidth Foundation and Global Head of Data and AI at PayPal, who teaches AI at the graduate level at Boston College.</p>
+        </section>
+
+        <!-- ABOUT THE ISSUER -->
+        <section class="card" aria-labelledby="issuer">
+            <h2 id="issuer">About the issuer</h2>
+            <p>The Benevolent Bandwidth Foundation (B2) brings together volunteers with technical and nonprofit backgrounds to make AI useful for public benefit.</p>
+            <p>B2 helps nonprofits in three ways: the GenAI Academy, custom AI solutions built by a distributed volunteer network, and the Agentic Nonprofit platform of ready-made agents, which is in development.</p>
+            <p>The academy exists so that people working at nonprofits can learn to use AI well and safely, with practice on real nonprofit tasks, at no cost.</p>
+            <a href="/" class="btn btn-outline">Visit benevolentbandwidth.org</a>
+        </section>
+
+        <!-- HOW TO VERIFY -->
+        <section class="card" aria-labelledby="verify">
+            <h2 id="verify">How to verify a badge</h2>
+            <p>Every badge is issued through Certifier and has its own credential page. That page shows the earner's name, the issue date, and the issuer, and confirms that the credential is authentic and has not been revoked.</p>
+            <ol class="verify-steps">
+                <li>Ask the earner for the credential link they received, or open the credential linked from their LinkedIn profile.</li>
+                <li>On the credential page, check that the earner's name and issue date are correct and that the issuer is the Benevolent Bandwidth Foundation.</li>
+                <li>Confirm the page shows the credential as valid.</li>
+            </ol>
+            <p class="note">A badge image on its own is not proof. The credential page is. If you have questions about a badge, email Participant Support &amp; Logistics at <a href="mailto:kirill@benevolentbandwidth.org">kirill@benevolentbandwidth.org</a>.</p>
+        </section>
+
+        <!-- BADGE DETAILS -->
+        <section class="card" aria-labelledby="details">
+            <h2 id="details">Badge details</h2>
+            <table class="details-table" aria-labelledby="details">
+                <tbody>
+                    <tr><th scope="row">Badge name</th><td>GenAI Academy for Nonprofits — Fall 2026</td></tr>
+                    <tr><th scope="row">Issuer</th><td>Benevolent Bandwidth Foundation (B2)</td></tr>
+                    <tr><th scope="row">Standard</th><td>Open Badges 3.0</td></tr>
+                    <tr><th scope="row">Platform</th><td>Certifier</td></tr>
+                    <tr><th scope="row">Cohort</th><td>Fall 2026 (pilot)</td></tr>
+                    <tr><th scope="row">Dates</th><td>October 24 – November 14, 2026</td></tr>
+                    <tr><th scope="row">Format</th><td>Four live, instructor-led online sessions, about two hours each</td></tr>
+                    <tr><th scope="row">Cost</th><td>Free</td></tr>
+                    <tr><th scope="row">Expiration</th><td>None</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; The Benevolent Bandwidth Foundation, Inc. · Massachusetts Nonprofit Corporation. All rights reserved.</p>
+        <p style="margin: 15px 0;">
+            <a href="mailto:benevolent@benevolentbandwidth.org">Contact</a> •
+            <a href="https://github.com/benevolentbandwidth/" target="_blank" rel="noopener">GitHub</a> •
+            <a href="https://benevolentbandwidth.slack.com" target="_blank" rel="noopener">Slack</a> •
+            <a href="https://docs.google.com/forms/d/1JCeX_p8Zzsg2FGJw3Z60OV-qwlIaP7EBGSNStcCvLdY/edit" target="_blank" rel="noopener">Collaborate</a> •
+            <a href="/terms.html">Terms</a> •
+            <a href="/privacy.html">Privacy</a>
+        </p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">Built with ❤️ for humanity</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const isOpen = navLinks.classList.toggle('active');
+            document.querySelector('.mobile-menu-toggle').setAttribute('aria-expanded', isOpen);
+        }
+    </script>
+
+</body>
+</html>
