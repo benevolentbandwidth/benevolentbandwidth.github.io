@@ -299,6 +299,27 @@
             margin: 0;
         }
 
+        .criteria-list p + p {
+            margin-top: 12px;
+        }
+
+        /* Nested session list inside criterion 1 (resets the numbered-circle styling) */
+        .criteria-list .criteria-sessions {
+            list-style: disc;
+            margin: 8px 0 0;
+            padding-left: 1.4em;
+        }
+
+        .criteria-list .criteria-sessions li {
+            padding: 0;
+            margin-bottom: 4px;
+            counter-increment: none;
+        }
+
+        .criteria-list .criteria-sessions li::before {
+            content: none;
+        }
+
         /* Skills - matches the b² Principles list */
         .skills-list {
             list-style: none;
@@ -573,19 +594,26 @@
             <ol class="criteria-list">
                 <li>
                     <h3>Attended all four live sessions</h3>
-                    <p>Attended all four live, instructor-led sessions of the Benevolent Bandwidth Foundation's GenAI Academy for Nonprofits (October 24 – November 14, 2026): AI Foundations and Prompting; Building Useful Tools with AI; Data Generation and AI-Powered Analysis; and Agentic AI Orchestration with n8n.</p>
+                    <p>Participants attended the four live, instructor-led sessions of the Benevolent Bandwidth Foundation’s GenAI Academy for Nonprofits, about two hours each, held October 24 – November 14, 2026:</p>
+                    <ul class="criteria-sessions">
+                        <li>Session 1: AI Foundations, Prompting, and Context Engineering</li>
+                        <li>Session 2: Building Useful Tools with AI (Vibe Coding)</li>
+                        <li>Session 3: Data Generation and AI-Powered Analysis</li>
+                        <li>Session 4: Agentic AI Orchestration with n8n</li>
+                    </ul>
                 </li>
                 <li>
-                    <h3>Session 1: Structured prompts with a written rationale</h3>
-                    <p>Completed a hands-on prompting lab built around a fictional youth nonprofit. Submitted structured prompts defining task, context, constraints, and format, using techniques such as role assignment, few-shot examples, and fenced sources. Included a written explanation of how each prompt was built, why each technique was chosen, and where guardrails were added, such as flagging missing facts and labeling drafts for human review.</p>
+                    <h3>Structured prompts with a written rationale</h3>
+                    <p>Participants completed a hands-on prompting lab with 18 prompting strategies built around a fictional youth nonprofit.</p>
+                    <p>Submitted structured prompts defining task, context, constraints, and format, using techniques such as role assignment, few-shot examples, and fenced sources. Included a written explanation of how each prompt was built, why each technique was chosen, and where guardrails were added, such as flagging missing facts and labeling drafts for human review.</p>
                 </li>
                 <li>
-                    <h3>Session 2: Interactive grant tracker (HTML)</h3>
-                    <p>Vibe-coded a working grant tracker with Claude from 20 fictional grant records and a project brief, and submitted the HTML file. Briefed the AI on the user, job, and data; reviewed its plan before building; delivered a readable grant list with status filter, keyword search, and reset; flagged missing information as "not provided" instead of inventing it; and refined the tool through conversational iteration.</p>
+                    <h3>Interactive grant tracker</h3>
+                    <p>Vibe-coded a working grant tracker with Claude from 20 fictional grant records and a project brief. Briefed the AI on the user, job, and data; reviewed its plan before building; delivered a readable grant list with status filter, keyword search, and reset; flagged missing information as “not provided” instead of inventing it; and refined the tool through conversational iteration.</p>
                 </li>
                 <li>
-                    <h3>Session 3: Data dashboard (HTML)</h3>
-                    <p>Built a defensible dashboard from a 144-row synthetic nonprofit dataset using a seven-step prompt pipeline, and submitted the HTML file. Set explicit data, calculation, behavior, and boundary rules; had the AI audit the data for duplicates, gaps, and impossible records and flag rather than fix them; defined KPI formulas before building; then built, verified, and restyled the dashboard.</p>
+                    <h3>Data dashboard</h3>
+                    <p>Built a defensible dashboard from a 144-row synthetic nonprofit dataset using a seven-step prompt pipeline. Set explicit data, calculation, behavior, and boundary rules; had the AI audit the data for duplicates, gaps, and impossible records and flag them rather than fix them; defined KPI formulas before building; then built, verified, and restyled the dashboard.</p>
                 </li>
                 <li>
                     <h3>Responsible-use standards</h3>
@@ -649,7 +677,7 @@
             <p>The Benevolent Bandwidth Foundation (B2) brings together volunteers with technical and nonprofit backgrounds to make AI useful for public benefit.</p>
             <p>B2 helps nonprofits in three ways: the GenAI Academy, custom AI solutions built by a distributed volunteer network, and the Agentic Nonprofit platform of ready-made agents, which is in development.</p>
             <p>The academy exists so that people working at nonprofits can learn to use AI well and safely, with practice on real nonprofit tasks, at no cost.</p>
-            <a href="/" class="btn btn-outline">Visit benevolentbandwidth.org</a>
+            <a href="/" class="btn btn-outline" aria-label="Learn more about the Benevolent Bandwidth Foundation">Learn more <span aria-hidden="true">→</span></a>
         </section>
 
         <!-- HOW TO VERIFY -->
@@ -676,7 +704,6 @@
                     <tr><th scope="row">Cohort</th><td>Fall 2026 (pilot)</td></tr>
                     <tr><th scope="row">Dates</th><td>October 24 – November 14, 2026</td></tr>
                     <tr><th scope="row">Format</th><td>Four live, instructor-led online sessions, about two hours each</td></tr>
-                    <tr><th scope="row">Cost</th><td>Free</td></tr>
                     <tr><th scope="row">Expiration</th><td>None</td></tr>
                 </tbody>
             </table>
